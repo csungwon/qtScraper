@@ -1,0 +1,19 @@
+{
+  "name": "qtscraper",
+  "version": "1.0.0",
+  "description": "Scrapes daily QT(Queit Time - https://bible.org/article/quiet-time-what-why-and-how) from http://www.365qt.com",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csungwon/qtScraper.git"
+  },
+  "author": "Sungwon Cho <csungwon@berkeley.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csungwon/qtScraper/issues"
+  },
+  "homepage": "https://github.com/csungwon/qtScraper#readme"
+}
