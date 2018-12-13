@@ -6,14 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/csungwon/qtScraper.git"
-  },
+  "repository": "git+https://github.com/csungwon/qtScraper.git",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "author": "Sungwon Cho <csungwon@berkeley.edu>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/csungwon/qtScraper/issues"
   },
-  "homepage": "https://github.com/csungwon/qtScraper#readme"
+  "homepage": "https://github.com/csungwon/qtScraper#readme",
+  "devDependencies": {
+    "lerna": "^3.6.0"
+  }
 }
