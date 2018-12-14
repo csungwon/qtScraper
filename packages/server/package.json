@@ -28,10 +28,15 @@
   },
   "dependencies": {
     "apollo-server-express": "^2.2.6",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
+    "iconv-lite": "^0.4.24",
+    "moment-timezone": "^0.5.23",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
     "sequelize": "^4.42.0"
   }
 }
