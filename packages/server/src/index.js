@@ -1,33 +1,39 @@
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 
+import db from './models';
+
 const app = express();
 
-const books = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling'
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton'
-  }
-];
-
 const typeDefs = gql`
-  type Book {
-    title: String!
-    author: String!
+  type Query {
+    verse(input: VerseInput!): Verse!
   }
 
-  type Query {
-    books: [Book!]!
+  type Verse {
+    book: String!
+    chapter: Int!
+    verse: Int!
+    text: String!
+  }
+
+  input VerseInput {
+    book: String!
+    chapter: Int!
+    verse: Int!
   }
 `;
 
 const resolvers = {
   Query: {
-    books: () => books
+    verse: (_, { input: { book, chapter, verse } }, { db }) =>
+      db.verse.findOne({
+        where: {
+          book,
+          chapter,
+          verse
+        }
+      })
   }
 };
 
@@ -35,7 +41,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: true
+  playground: true,
+  context: () => ({ db })
 });
 
 server.applyMiddleware({
@@ -45,6 +52,8 @@ server.applyMiddleware({
 
 const PORT = process.env.PORT || 8000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Apollo Server running on port ${PORT}!`);
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`🚀 Apollo Server running on port ${PORT}!`);
+  });
 });
