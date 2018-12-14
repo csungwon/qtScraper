@@ -4,7 +4,14 @@
   "description": "Scrapes daily QT(Queit Time - https://bible.org/article/quiet-time-what-why-and-how) from http://www.365qt.com",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "run-p start:*",
+    "start:server": "lerna exec --scope @qtscraper/server -- yarn start",
+    "build": "run-p build:*",
+    "build:server": "lerna exec --scope @qtscraper/server -- yarn build",
+    "develop": "run-p build:*",
+    "develop:server": "lerna exec --scope @qtscraper/server -- yarn develop",
+    "heroku-prebuild": "rm -rf packages/web",
+    "heroku-postbuild": "yarn build:server"
   },
   "repository": "git+https://github.com/csungwon/qtScraper.git",
   "private": true,
@@ -18,6 +25,7 @@
   },
   "homepage": "https://github.com/csungwon/qtScraper#readme",
   "devDependencies": {
-    "lerna": "^3.6.0"
+    "lerna": "^3.6.0",
+    "npm-run-all": "^4.1.5"
   }
 }
