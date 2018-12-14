@@ -17,7 +17,8 @@ const sequelize = DATABASE_URL
   : new Sequelize(DATABASE, DATABASE_USER, DATABASE_PASSWORD, sequelizeConfig);
 
 const db = {
-  verse: sequelize.import('./verse')
+  verse: sequelize.import('./verse'),
+  user: sequelize.import('./user')
 };
 
 Object.keys(db).forEach(model => {
