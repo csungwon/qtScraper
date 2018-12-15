@@ -18,7 +18,8 @@ const sequelize = DATABASE_URL
 
 const db = {
   verse: sequelize.import('./verse'),
-  user: sequelize.import('./user')
+  user: sequelize.import('./user'),
+  userQt: sequelize.import('./userQt')
 };
 
 Object.keys(db).forEach(model => {

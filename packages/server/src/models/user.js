@@ -41,5 +41,14 @@ export default (sequelize, dataTypes) => {
     }
   );
 
+  User.associate = ({ user, userQt }) => {
+    user.hasMany(userQt, {
+      foreignKey: {
+        name: 'authorId',
+        allowNull: false
+      }
+    });
+  };
+
   return User;
 };

@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server-express';
 import QtSchema from './qt';
 import UserSchema from './user';
+import UserQtSchema from './userQt';
 
 const linkSchema = gql`
   type Query {
@@ -12,4 +13,4 @@ const linkSchema = gql`
   }
 `;
 
-export default [linkSchema, QtSchema, UserSchema];
+export default [linkSchema, QtSchema, UserSchema, UserQtSchema];
