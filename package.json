@@ -6,10 +6,13 @@
   "scripts": {
     "start": "run-p start:*",
     "start:server": "lerna exec --scope @qtscraper/server -- yarn start",
+    "start:web": "lerna exec --scope @qtscraper/web -- yarn start",
     "build": "run-p build:*",
     "build:server": "lerna exec --scope @qtscraper/server -- yarn build",
+    "build:web": "lerna exec --scope @qtscraper/web -- yarn build",
     "develop": "run-p build:*",
     "develop:server": "lerna exec --scope @qtscraper/server -- yarn develop",
+    "develop:web": "lerna exec --scope @qtscraper/web -- yarn develop",
     "heroku-prebuild": "rm -rf packages/web",
     "heroku-postbuild": "yarn build:server"
   },
