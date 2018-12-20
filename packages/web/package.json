@@ -10,7 +10,8 @@
     "react": "^16.6.3",
     "react-apollo": "^2.3.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-spinners": "^0.4.8"
   },
   "scripts": {
     "develop": "react-scripts start",
