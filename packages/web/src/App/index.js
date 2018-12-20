@@ -1,44 +1,15 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import './index.scss';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-const GET_QT = gql`
-  {
-    qt(qtId: 7176) {
-      qtId
-      title
-      date
-      reading
-      scriptures {
-        book
-        chapter
-        verse
-        text
-      }
-      references
-      questions
-      guide
-    }
-  }
-`;
+import QtCalendar from '../QtCalendar';
 
-class App extends Component {
-  render() {
-    return (
-      <Query query={GET_QT}>
-        {({ loading, data }) =>
-          loading ? (
-            <p>LOADING...</p>
-          ) : (
-            <pre>
-              <code>{JSON.stringify(data, null, 2)}</code>
-            </pre>
-          )
-        }
-      </Query>
-    );
-  }
-}
-
-export default App;
+export default () => (
+  <Router>
+    <Switch>
+      <Route path="/(calendar)?" exact component={QtCalendar} />
+      <Route
+        render={() => <h1 style={{ textAlign: 'center' }}>Page Not Found</h1>}
+      />
+    </Switch>
+  </Router>
+);
