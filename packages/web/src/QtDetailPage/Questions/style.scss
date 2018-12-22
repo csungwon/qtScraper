@@ -1,0 +1,27 @@
+.qt__question {
+  &--item {
+    font-weight: bold;
+    margin: 1em 0;
+    display: block;
+  }
+
+  &--form {
+    outline: none;
+    display: block;
+    background-color: #fbfbfb;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 1em 2em;
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      box-shadow: none;
+      border: 2px solid #777;
+      border-right-width: 2px !important;
+    }
+  }
+}

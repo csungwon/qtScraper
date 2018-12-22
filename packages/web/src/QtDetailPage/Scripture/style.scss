@@ -1,0 +1,13 @@
+.qt__scriptures {
+  border-left: 0.5em solid darkslategray;
+  padding-left: 1em;
+  max-height: 350px;
+  overflow-y: auto;
+  list-style: none;
+
+  &--chapter {
+    list-style-position: inside;
+    padding-left: 1em;
+    margin-top: 3px;
+  }
+}

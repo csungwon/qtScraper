@@ -1,0 +1,34 @@
+h2 {
+  margin-bottom: 10px;
+}
+
+section {
+  margin-top: 2em;
+}
+
+.qt__container {
+  max-width: 60%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em 2em;
+  line-height: 1.4;
+  box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.46);
+
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+  }
+}
+
+.qt__back-button {
+  position: absolute;
+  left: 1em;
+  top: 70px;
+  box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.16);
+
+  @media screen and (max-width: 700px) {
+    position: relative;
+    left: auto;
+    top: auto;
+    box-shadow: none;
+  }
+}
