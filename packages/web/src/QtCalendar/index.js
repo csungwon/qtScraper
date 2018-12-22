@@ -22,11 +22,12 @@ const QT_METAS_QUERY = gql`
 
 export default ({ history, location }) => {
   const queryDate = queryString.parse(location.search).month;
-  const navigateTo = pathname => {
-    history.push({
-      pathname,
-      state: { from: location }
-    });
+  const navigateTo = (pathname, state) => {
+    if (state) {
+      history.push({ pathname, state });
+    } else {
+      history.push(pathname);
+    }
   };
   return (
     <Query query={QT_METAS_QUERY} variables={{ date: queryDate }}>
