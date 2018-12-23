@@ -1,0 +1,19 @@
+.auth {
+  &--container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 246, 242);
+    padding: 1em 2em;
+    border-radius: 5px;
+    box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.46);
+  }
+
+  &--global-error {
+    margin: 1em auto;
+  }
+}
