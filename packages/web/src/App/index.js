@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import QtCalendar from '../QtCalendar';
 import QtDetailPage from '../QtDetailPage';
 import Login from '../Login';
+import Register from '../Register';
 import AuthRoute from './AuthRoute';
 import { Spinner } from '../ui';
 
@@ -30,6 +31,7 @@ export default () => (
             <Route path="/(calendar)?" exact component={QtCalendar} />
             <Route path="/qt/:qtId" component={QtDetailPage} />
             <AuthRoute path="/login" component={Login} />
+            <AuthRoute path="/register" component={Register} />
             <Route
               render={() => (
                 <h1 style={{ textAlign: 'center' }}>Page Not Found</h1>
