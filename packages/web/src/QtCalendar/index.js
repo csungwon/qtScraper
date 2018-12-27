@@ -43,7 +43,7 @@ export default ({ history, location }) => {
             qtMetaMap[qtMeta.day] = qtMeta;
           });
           userQts.forEach(qt => {
-            userQtIds.add(qt.id);
+            userQtIds.add(qt.qtId);
           });
         }
 

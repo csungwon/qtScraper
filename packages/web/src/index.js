@@ -7,8 +7,6 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-console.log(process.env);
-
 const client = new ApolloClient({
   uri: process.env.REACT_APP_GRAPHQL_SERVER,
   credentials: 'include',

@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  line-height: 1.42857143;
+  min-height: 52px;
+  margin-bottom: 20px;
+  background-color: #222;
+  border-color: #080808;
+  padding: 1em 1.5em;
+  align-items: center;
+  justify-content: space-between;
+
+  &--header {
+    color: #9d9d9d;
+    font-size: 1.4em;
+
+    & > a {
+      text-decoration: none;
+    }
+  }
+
+  &--logo {
+    height: 1.5em;
+    margin-top: -6px;
+  }
+}
