@@ -14,15 +14,15 @@ app.use(
     secret: process.env.SECRET,
     sameSite: true,
     maxAge: 24 * 60 * 60 * 1000,
-    secure: process.env.ENVIRONMENT === 'production'
+    secure: process.env.NODE_ENV === 'production'
   })
 );
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  introspection: true,
-  playground: true,
+  introspection: process.env.NODE_ENV === 'development',
+  playground: process.env.NODE_ENV === 'development',
   context: ({ req }) => ({ db, req })
 });
 
@@ -31,7 +31,7 @@ server.applyMiddleware({
   path: '/graphql',
   cors: {
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: process.env.FRONT_END_URL
   }
 });
 
