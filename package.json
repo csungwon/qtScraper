@@ -13,8 +13,7 @@
     "develop": "run-p develop:*",
     "develop:server": "lerna exec --scope @qtscraper/server -- yarn develop",
     "develop:web": "lerna exec --scope @qtscraper/web -- yarn develop",
-    "heroku-prebuild": "rm -rf packages/web",
-    "heroku-postbuild": "yarn build:server",
+    "heroku-postbuild": "yarn build && mv packages/web/build packages/server/public",
     "clean": "find . -name node_modules -type d -prune -exec rm -rf '{}' +"
   },
   "repository": "git+https://github.com/csungwon/qtScraper.git",
