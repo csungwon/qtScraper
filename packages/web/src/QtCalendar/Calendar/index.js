@@ -41,7 +41,7 @@ export default ({ navigateTo, qtMetas, userQtIds, queryDate }) => {
 
   const onClickDay = value => {
     if (qtMetas[value.getDate()]) {
-      navigateTo(`/qt/${qtMetas[value.getDate()].qtId}`);
+      navigateTo(`/qt/${qtMetas[value.getDate()].qtId}`, true);
     }
   };
 

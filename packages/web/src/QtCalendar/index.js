@@ -24,7 +24,7 @@ export default ({ history, location }) => {
   const queryDate = queryString.parse(location.search).month;
   const navigateTo = (pathname, state) => {
     if (state) {
-      history.push({ pathname, state });
+      history.push({ pathname, state: { from: location } });
     } else {
       history.push(pathname);
     }

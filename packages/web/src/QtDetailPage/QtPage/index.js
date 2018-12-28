@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Button, Icon } from 'antd';
 
 import { Spinner } from '../../ui';
@@ -27,6 +27,8 @@ class QtPage extends Component {
   };
 
   render() {
+    const { location } = this.props;
+    const { from } = location.state || { from: { pathname: '/calendar' } };
     const { loading, error } = this.props.data;
 
     if (loading) return <Spinner>큐티를 불러오는 중입니다...</Spinner>;
@@ -49,7 +51,7 @@ class QtPage extends Component {
         ) : (
           <>
             <Button className="qt__back-button" size="large">
-              <Link to="/calendar">
+              <Link to={from}>
                 <Icon type="left" /> 달력
               </Link>
             </Button>
@@ -70,4 +72,4 @@ class QtPage extends Component {
   }
 }
 
-export default QtPage;
+export default withRouter(QtPage);
